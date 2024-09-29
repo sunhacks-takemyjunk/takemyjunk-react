@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../index.css";
 import "./getCookie";
 import { setCookie, getCookie } from "./getCookie";
-import { basket } from "./itemMaps";
+
 
 function Navbar() {
   const [isLoggedIn, setLoginState] = useState(false);
@@ -107,8 +107,6 @@ function Navbar() {
   const handleLogout = () => {
     document.cookie = "userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     setLoginState(false);
-    basket.clearMiscMap();
-    basket.clearBikeMap();
     navigate("/");
   };
 
@@ -117,8 +115,8 @@ function Navbar() {
       <div class="navbar bg-primary">
         <div class="navbar-start space-x-5 text-primary-content">
           <Link to="/">Home</Link>
-          <Link to="/Bikes">Bikes</Link>
-          <Link to="/Misc">Misc</Link>
+          <Link to="/Item">Item</Link>
+          <Link to="/Sell">Sell</Link>
         </div>
 
         <div class="navbar-end">
@@ -133,7 +131,7 @@ function Navbar() {
                     Logout
                   </button>
                   <Link to="/Account" class="btn btn-ghost rounded-btn">
-                    My Orders
+                    My Listings
                   </Link>
                 </>
               ) : (
@@ -277,19 +275,6 @@ function Navbar() {
                     >
                       {signup_error}
                     </text>
-                    <label class="label"></label>
-                    <label class="label">
-                      <span id="payment_method" class="label-text">
-                        Payment Method - VISA/MASTERCARD/PayPAL
-                      </span>
-                    </label>
-                    <input
-                      id="payment_method_input"
-                      type="text"
-                      placeholder="Enter your payment method"
-                      class="input input-bordered w-full max-w-xs"
-                      required
-                    />
                     <label class="label"></label>
                   </div>
                   <button

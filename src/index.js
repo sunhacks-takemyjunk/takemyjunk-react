@@ -2,10 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import App from "./views/App";
 import Home from "./views/Home";
-import Bikes from "./views/Bikes";
-import Misc from "./views/Misc";
+import Item from "./views/Item";
 import Account from "./views/Account";
 import Navbar from "./components/navbar";
 import Checkout from "./views/Checkout";
@@ -18,9 +16,7 @@ root.render(
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/App" element={<App />} />
-        <Route path="/Bikes" element={<Bikes />} />
-        <Route path="/Misc" element={<Misc />} />
+        <Route path="/Item" element={<Item />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Checkout" element={<Checkout />} />
       </Routes>

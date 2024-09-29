@@ -28,7 +28,6 @@ function Account() {
             data.userInfo.c_customer_id,
             data.userInfo.c_email,
             data.userInfo.c_name,
-            data.userInfo.c_payment_method,
           ]);
         } else {
           console.log("Not found");
@@ -68,7 +67,6 @@ function Account() {
               <label>{"[Customer ID#]:" + userInfo[0]}</label>
               <label>{"[Email]: " + userInfo[1]}</label>
               <label>{"[Name]:  " + userInfo[2]}</label>
-              <label>{"[Payment Method]:  " + userInfo[3]}</label>
             </div>
             <span className="flex-shrink mx-4 text-gray-400">
               ----------------------------------------------------------------------------- 
@@ -94,12 +92,10 @@ function Account() {
                       
                       <tr key={orderIds}>
                         <td>{orderIds[index]}</td>
-                        <td>{order.store_id}</td>
                         <tbody>
                         {Object.values(order.item).map((item, i) => (
                           <tr>
                             <td>{item.name}</td>
-                            <td>{item.quantity}</td>
                             <td>{item.price}</td>
                           </tr>
                         ))}
